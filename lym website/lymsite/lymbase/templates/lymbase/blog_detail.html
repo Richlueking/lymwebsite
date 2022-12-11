@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="{% static 'styles/style.css' %}" />
+    <title>LYM</title>
+</head>
+<body>
+{% include 'lymbase/header.html' %}
+
+<!-- blogs section starts  -->
+
+<section class="blogs" id="blogs">
+    <h1 class="section-title"><span>Blog</span></h1>
+
+    <div class="swiper blogs-slider">
+       <div class="swiper-wrapper">
+
+                  <div class="swiper-slide slide">
+                     <div class="image">
+                        <img src="{{blog.blog_pic.url}}" alt="img">
+                        <span>{{blog.topic}}</span>
+                     </div>
+                     <div class="content">
+                        <div class="icon">
+                           <a href="#"> <i class="fas fa-calendar"></i>{{blog.created}}</a>
+                           <a href="#"> <i class="fas fa-user">By:</i>{{blog.writer}}</a>
+                        </div>
+                        <a href="#" class="title">{{blog.topic}}</a>
+                        <p>
+                            {{blog.paragraph|safe}}
+                        </p>
+                     </div>
+                  </div>
+
+       </div>
+       <div class="swiper-pagination">
+       </div>
+    </div>
+ </section>
+ <!-- blogs section ends -->
+
+{% include 'lymbase/contact_footer.html' %}
+  <script src="{% static 'js/app.js' '%}"></script>
+</body>
+</html>
+

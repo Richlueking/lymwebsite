@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="{% static 'styles/style.css' %}" />
+    <title>LYM</title>
+</head>
+
+<body>
+
+{% include 'lymbase/header.html' %}
+
+<!-- team Section -->
+
+  <section id="services">
+    <div class="services container">
+      <div class="service-top">
+        <h1 class="section-title">Meet<span> The </span>Team</h1>
+        <p>
+          THERE ARE TWO KINDS OF OPPORTUNITIES: THE GIVEN OPPORTNITY AND THE CREATED OPPORTUNITY.
+          WHAT HAPPENS WHEN THE GIVEN OPPORTUNITY FAILS TO SHOW UP???? THEN, CREATE ONE FOR YOURSELF AND STOP COMPLAINNING…..
+          !</p>
+      </div>
+
+      <div class="service-bottom">
+
+        {% for member in members %}
+            <div class="service-item">
+              <div class="icon"><img src="{{member.member_pic.url}}" alt="img"></div>
+              <h2>{{member.member_name}}</h2>
+              <h4>{{member.member_position}}</h4>
+              <p>
+                {{member.about_member}}
+              </p>
+            </div>
+        {% endfor %}
+
+      </div>
+    </div>
+  </section>
+
+  <!-- End team Section -->
+
+{% include 'lymbase/contact_footer.html' %}
+  <script src="{% static 'js/app.js' '%}"></script>
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="{% static 'styles/style.css' %}" />
+    <title>LYM</title>
+</head>
+<body>
+
+{% include 'lymbase/header.html' %}
+
+
+      <section id="projects">
+
+          <div class="projects container">
+            <div class="projects-header">
+              <h1 class="section-title">What <span>We Do </span></h1>
+            </div>
+            <div class="all-projects">
+
+              <div class="project-item">
+                <div class="project-info">
+                  <h1>Our Goal</h1>
+                  <p>BE THE POSITIVE CHANGE THINK</p>
+                </div>
+              </div>
+
+              <div class="project-item">
+                <div class="project-info">
+                  <h1>Vision</h1>
+                  <p>An NGO that will ignite the minds of consumers so that they be producers through the utilization of their Devine Inheritance in dealing with life Impediments so as to heal the world</p>
+                </div>
+              </div>
+
+              <div class="project-item">
+                <div class="project-info">
+                  <h1>Mission Statement</h1>
+                  <ul class="mission">
+                    <li>TO BUILT A PRIVATE STAFF THAT REFLECTS MORAL, LEGAL, SOCIAL AND ECONOMIC VALUES THROUGH EVENING MIRRORS, SEMINARS AND TRAININGS</li>
+                    <li>TO PLEAD CASES OF LOW INCOME EARNERS THROUGH COURT ADJUDICATION</li>
+                    <li>TO PRODUCE WHAT WE CONSUME THROUGH AGRICULTURAL ACTIVITIES</li>
+                    <li>TO SETTLE FAMILY TO COMMUNITY DISPUTE THROUGH PSYCO-SOCIAL COUNSELLING </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+<!-- Service Section -->
+      <section id="projects">
+
+          <div class="projects container">
+            <div class="all-projects">
+
+              {% for service in services %}
+                  <div class="project-item">
+                    <div class="project-info">
+                      <h1>{{service.service_title}}</h1>
+                      <p>
+                        {{service.about_service}}
+                      </p>
+                    </div>
+                    <div class="project-img">
+                      <img src="{{service.avatar.url}}" alt="img">
+                    </div>
+                  </div>
+              {% endfor %}
+
+            </div>
+          </div>
+        </section>
+  <!-- End Service Section -->
+
+{% include 'lymbase/contact_footer.html' %}
+  <script src="{% static 'js/app.js' '%}"></script>
+</body>
+
+</html>
